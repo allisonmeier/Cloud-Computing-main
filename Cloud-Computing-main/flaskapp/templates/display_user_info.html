@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current User Information</title>
+</head>
+
+<body>
+    <h1>Current User Information</h1>
+
+    <p>Username: {{ username }}</p>
+
+    <p>Password: {{ user_info.password }}</p>
+
+    <p>First Name: {{ user_info.first_name }}</p>
+
+    <p>Last Name: {{ user_info.last_name }}</p>
+
+    <p>Email: {{ user_info.email }}</p>
+
+    {% if file %}
+        <p>{{ file_name }} Word Count: {{ file_info.word_count }}</p>
+
+        <form action="http://ec2-18-223-113-204.us-east-2.compute.amazonaws.com/download" method="post">
+            <button type="submit">Click here to download the text file</button>
+        </form>
+    {% else %}
+        <p>No text file uploaded.</p>
+    {% endif %}
+
+    <p>
+        <a href="http://ec2-18-223-113-204.us-east-2.compute.amazonaws.com/home">Click here to go back to home page</a>
+    </p>
+
+</body>
+</html>
